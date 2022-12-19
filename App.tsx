@@ -1,13 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { Groups } from '@screens/Groups/Groups';
 import { ThemeProvider } from 'styled-components';
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_700Bold,
+} from '@expo-google-fonts/roboto';
+
+import { Groups } from '@screens/Groups/Groups';
 import { theme } from './src/theme';
+import { LoadingSpinner } from '@components/index';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_700Bold,
+  });
+
   return (
     <ThemeProvider theme={theme}>
-      <Groups />
-      <StatusBar style='auto' />
+      <StatusBar style='light' />
+      {fontsLoaded ? <Groups /> : <LoadingSpinner />}
     </ThemeProvider>
   );
 }
