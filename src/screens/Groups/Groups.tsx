@@ -1,25 +1,34 @@
-import { GroupCard, Header, Highlight } from '@components/index';
+import { GroupCard, Header, Highlight, ListEmpty } from '@components/index';
+import { useState } from 'react';
+import { FlatList } from 'react-native';
 
 import * as S from './Groups.styles';
 
 export function Groups() {
+  const [groups] = useState<string[]>([]);
+
+  // [
+  //   'Galera do Ignite',
+  //   'Galera do Discord',
+  //   'Galera da faculdade',
+  // ]
+
   return (
     <S.Wrapper>
       <Header />
 
       <Highlight title='Turmas' subtitle='Jogue com sua turma' />
 
-      <GroupCard
-        title='Galera do Ignite'
-        onPress={() => console.log('teste')}
-      />
-      <GroupCard
-        title='Galera do Discord'
-        onPress={() => console.log('teste')}
-      />
-      <GroupCard
-        title='Galera da faculdade'
-        onPress={() => console.log('teste')}
+      <FlatList
+        data={groups}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => (
+          <GroupCard title={item} onPress={() => console.log(item)} />
+        )}
+        contentContainerStyle={groups.length === 0 && { flex: 1 }}
+        ListEmptyComponent={
+          <ListEmpty message='Você ainda não tem nenhuma turma cadastrada' />
+        }
       />
     </S.Wrapper>
   );
