@@ -1,17 +1,21 @@
-import { GroupCard, Header, Highlight, ListEmpty } from '@components/index';
+import {
+  Button,
+  GroupCard,
+  Header,
+  Highlight,
+  ListEmpty,
+} from '@components/index';
 import { useState } from 'react';
 import { FlatList } from 'react-native';
 
 import * as S from './Groups.styles';
 
 export function Groups() {
-  const [groups] = useState<string[]>([]);
-
-  // [
-  //   'Galera do Ignite',
-  //   'Galera do Discord',
-  //   'Galera da faculdade',
-  // ]
+  const [groups] = useState<string[]>([
+    'Galera do Ignite',
+    'Galera do Discord',
+    'Galera da faculdade',
+  ]);
 
   return (
     <S.Wrapper>
@@ -30,6 +34,8 @@ export function Groups() {
           <ListEmpty message='Você ainda não tem nenhuma turma cadastrada' />
         }
       />
+
+      <Button type='primary' text='Criar nova turma' />
     </S.Wrapper>
   );
 }
