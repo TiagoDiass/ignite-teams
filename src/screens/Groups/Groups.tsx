@@ -1,4 +1,4 @@
-import { Header } from '@components/index';
+import { Header, Highlight } from '@components/index';
 
 import * as S from './Groups.styles';
 
@@ -7,7 +7,7 @@ export function Groups() {
     <S.Wrapper>
       <Header />
 
-      <S.Text>Teste da FoNTE</S.Text>
+      <Highlight title='Turmas' subtitle='Jogue com sua turma' />
     </S.Wrapper>
   );
 }
