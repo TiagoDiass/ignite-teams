@@ -1,5 +1,5 @@
 import { UsersThree } from 'phosphor-react-native';
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 
 export const Wrapper = styled.View`
   flex: 1;
@@ -17,15 +17,4 @@ export const PeopleIcon = styled(UsersThree).attrs(({ theme }) => ({
   color: theme.COLORS.GREEN_500,
 }))`
   align-self: center;
-`;
-
-export const GroupNameTextField = styled.TextInput`
-  ${({ theme }) => css`
-    height: 56px;
-    padding: 16px;
-    background-color: ${theme.COLORS.GRAY_700};
-    color: ${theme.COLORS.WHITE};
-    margin-bottom: 20px;
-    border-radius: 6px;
-  `}
 `;

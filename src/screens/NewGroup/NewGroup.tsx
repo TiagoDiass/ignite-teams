@@ -1,6 +1,5 @@
-import { Button, Header, Highlight } from '@components/index';
-import { Text } from 'react-native';
-import { theme } from '../../theme';
+import { Button, Header, Highlight, TextField } from '@components/index';
+
 import * as S from './NewGroup.styles';
 
 export function NewGroup() {
@@ -16,12 +15,9 @@ export function NewGroup() {
           subtitle='Crie uma turma para adicionar pessoas'
         />
 
-        <S.GroupNameTextField
-          placeholder='Nome da turma'
-          placeholderTextColor={theme.COLORS.GRAY_300}
-        />
+        <TextField placeholder='Nome da turma' />
 
-        <Button text='Criar' />
+        <Button style={{ marginTop: 16 }} text='Criar' />
       </S.Content>
     </S.Wrapper>
   );
