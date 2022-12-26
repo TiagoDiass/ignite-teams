@@ -1,6 +1,5 @@
 import { TextInput, TextInputProps } from 'react-native';
-import styled, { css } from 'styled-components/native';
-import { theme } from '../../theme';
+import styled, { css, useTheme } from 'styled-components/native';
 
 const Wrapper = styled(TextInput)`
   ${({ theme }) => css`
@@ -15,5 +14,7 @@ const Wrapper = styled(TextInput)`
 `;
 
 export function TextField(props: TextInputProps) {
+  const theme = useTheme();
+
   return <Wrapper {...props} placeholderTextColor={theme.COLORS.GRAY_300} />;
 }
