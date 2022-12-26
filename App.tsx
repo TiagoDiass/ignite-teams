@@ -9,6 +9,7 @@ import {
 import { Groups } from '@screens/Groups/Groups';
 import { theme } from './src/theme';
 import { LoadingSpinner } from '@components/index';
+import { NewGroup } from '@screens/NewGroup/NewGroup';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,7 +20,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style='light' />
-      {fontsLoaded ? <Groups /> : <LoadingSpinner />}
+      {fontsLoaded ? <NewGroup /> : <LoadingSpinner />}
     </ThemeProvider>
   );
 }
